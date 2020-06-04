@@ -20,12 +20,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: "track",
-      routes: {
-        '/': (context) => HomeView(),
-        '/history': (context) => HistoryView(),
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/':
+            return PageRouteBuilder(
+              
+            );
+        }
       },
-      initialRoute: '/history',
+      initialRoute: '/',
     );
   }
 }

@@ -65,6 +65,7 @@ class _history_buttonState extends State<history_button>
   AnimationController _controller;
   Animation<Size> _buttonSizeAnimation;
 
+
   @override
   void initState() {
     // TODO: implement initState
@@ -83,19 +84,27 @@ class _history_buttonState extends State<history_button>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: _buttonSizeAnimation.value.height),
-      child: MaterialButton(
-          onPressed: () {
-            print("materialbutton pressed");
-          },
-          child: Center(child: Text("HISTORY", style: cardFontStyle))),
-      width: 250,
-      height: 70,
-      decoration: BoxDecoration(
-        border: Border.all(
-            color: Colors.white, style: BorderStyle.solid, width: 2.5),
-        borderRadius: BorderRadius.circular(40),
+    return GestureDetector(
+      onTap: () {
+        print("gesture detector tapped!");
+      },
+      child: Container(
+        margin: EdgeInsets.only(top: _buttonSizeAnimation.value.height),
+        child: MaterialButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(40)
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, '/history');
+            },
+            child: Center(child: Text("HISTORY", style: cardFontStyle))),
+        width: 250,
+        height: 70,
+        decoration: BoxDecoration(
+          border: Border.all(
+              color: Colors.white, style: BorderStyle.solid, width: 2.5),
+          borderRadius: BorderRadius.circular(40)
+        ),
       ),
     );
   }
