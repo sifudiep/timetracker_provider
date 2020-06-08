@@ -8,10 +8,6 @@ import 'locator.dart';
 
 void main() {
   setupLocator();
-  Timer.periodic(Duration(seconds: 1), (time) {
-    locator<TimeTracker>().tickTime();
-  });
-
   runApp(MyApp());
 }
 
@@ -20,17 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      title: "track",
-      onGenerateRoute: (RouteSettings settings) {
-        switch (settings.name) {
-          case '/':
-            return PageRouteBuilder(
-              
-            );
-        }
-      },
-      initialRoute: '/',
+      title: "timetracker",
+      home: HomeView(),
     );
   }
 }

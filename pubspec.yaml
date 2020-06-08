@@ -29,6 +29,7 @@ dependencies:
   provider: ^4.0.5
   get_it: ^4.0.2
   animations: ^1.0.0+5
+  flutter_page_transition: ^0.1.6
 
 dev_dependencies:
   flutter_test:

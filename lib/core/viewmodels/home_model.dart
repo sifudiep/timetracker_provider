@@ -14,6 +14,7 @@ class HomeModel extends BaseModel {
   }
 
   Function updateTime() {
+    locator<TimeTracker>().tickTime();
     notifyListeners();
   }
 
