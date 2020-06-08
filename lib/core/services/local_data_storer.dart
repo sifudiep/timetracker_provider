@@ -50,6 +50,7 @@ class LocalDataStorer {
         }
       });
       _loadTimeIntoTracker();
+      clearOldLogs();
     });
   }
 
